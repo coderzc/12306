@@ -94,7 +94,7 @@ class query:
                 continue
             value = station_ticket.get("data", "")
             if not value:
-                print (u'{0}-{1} 车次坐席查询为空, 查询url: https://kyfw.12306.cn{2}, 可以手动查询是否有票'.format(self.from_station_h,
+                print (u'{0}-{1} 车次坐席查询为空,ip网络异常，查询url: https://kyfw.12306.cn{2}, 可以手动查询是否有票'.format(self.from_station_h,
                                                                                                self.to_station_h,
                                                                                                select_url["req_url"]))
             else:
@@ -117,7 +117,7 @@ class query:
                                     start_time = ticket_info[8]
                                     arrival_time = ticket_info[9]
                                     distance_time = ticket_info[10]
-                                    print start_time, arrival_time, distance_time
+                                    print(start_time, arrival_time, distance_time)
                                     seat = j
                                     try:
                                         ticket_num = int(ticket_info[j])
@@ -160,7 +160,7 @@ class query:
                                             "status": True,
                                         }
                 else:
-                    print u"车次配置信息有误，或者返回数据异常，请检查 {}".format(station_ticket)
+                    print(u"车次配置信息有误，或者返回数据异常，请检查 {}".format(station_ticket))
         return {"code": ticket.FAIL_CODE, "status": False}
 
 
